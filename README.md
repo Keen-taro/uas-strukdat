@@ -31,19 +31,26 @@ Anggota Kelompok:
 
 ## Gambar Rancangan Antar Muka
 ![Menu Awal](https://user-images.githubusercontent.com/72697854/117032179-7a2e8480-ad2b-11eb-945f-bd412e321434.png)
+
 ![Login Pasien](https://user-images.githubusercontent.com/72697854/117032270-8e728180-ad2b-11eb-9f43-218629494364.png)
+
 ![Login Apoteker](https://user-images.githubusercontent.com/72697854/117032295-93373580-ad2b-11eb-9916-ab755a260b4f.png)
+
 ![Menu Pasien](https://user-images.githubusercontent.com/72697854/117032328-992d1680-ad2b-11eb-9376-3d016786c40b.png)
+
 ![tampilan pemesanan obat](https://user-images.githubusercontent.com/72697854/117032543-c24da700-ad2b-11eb-97f0-722e61480fd2.png)
+
 ![check-out pembelian](https://user-images.githubusercontent.com/72697854/117032561-c7125b00-ad2b-11eb-8a87-f7affedb62e4.png)
+
 ![List Obat untuk pasien](https://user-images.githubusercontent.com/72697854/117032587-cc6fa580-ad2b-11eb-8401-4d3843c2a81e.png)
+
 ![menu apoteker](https://user-images.githubusercontent.com/72697854/117032625-d42f4a00-ad2b-11eb-89ee-20c5fa975ec1.png)
+
 ![restock obat](https://user-images.githubusercontent.com/72697854/117032644-d98c9480-ad2b-11eb-969e-a1ebc9d1bda5.png)
+
 ![update obat](https://user-images.githubusercontent.com/72697854/117032679-e01b0c00-ad2b-11eb-96d5-3c38cbdeb251.png)
+
 ![tampilan pelayanan pemesanan pasien](https://user-images.githubusercontent.com/72697854/117032695-e1e4cf80-ad2b-11eb-8008-d171bb85054a.png)
-
-
-
 <!--
 Buat rancangan antar muka selengkap mungkin sesuai fungsi aplikasinya. rancangan antar muka
 diusahakan serapih dan seindah mungkin. tools yang digunakan dalam pembuatan rancangan gambar
