@@ -1,5 +1,13 @@
 #include <iostream>
-#include "struct.hpp"
+
+struct obat{
+    std::string namaObat;
+    int harga;
+    int stok;
+    obat* nextObat;
+};
+typedef obat* obatPtr;
+typedef obatPtr obatList;
 
 void createElemnt(obatPtr& newObat, int harga, int stok, std::string namaObat){
     newObat = new obat;
@@ -8,7 +16,7 @@ void createElemnt(obatPtr& newObat, int harga, int stok, std::string namaObat){
     newObat->namaObat = namaObat;
     newObat->nextObat = nullptr;
 }
-typedef obatPtr obatList;
+
 void insertObat(obatList &head, obatPtr newObat){
     if(head == nullptr){
         head = newObat;
@@ -33,15 +41,15 @@ void deleteObat(obatList &head, obatPtr &pDel, std::string obat){
         std::cout << "obat yang dicari tidak ditemukan " << '\n';
     } else {
         if(pDel == head){
-            head = head->next;
-            pDel->next = nullptr;
-        } else if(pDel->next == nullptr){
-            pDel->next = nullptr;
+            head = head->nextObat;
+            pDel->nextObat = nullptr;
+        } else if(pDel->nextObat == nullptr){
+            pDel->nextObat = nullptr;
             pDel = nullptr;
         } else {
-            pDel->next = pDel->next;
-            pDel->next = pDel;
-            pDel->next = nullptr;
+            pDel->nextObat = pDel->nextObat;
+            pDel->nextObat = pDel;
+            pDel->nextObat = nullptr;
             pDel = nullptr;
         }
         delete pDel;
@@ -52,12 +60,38 @@ void traversal(obatList &head){
         std::cout << "list obat kosong! \n";
     } else {
         obatPtr pHelp = head;
+        std::cout<<"=====================\n";
+        std::cout<<"      List Obat\n";
+        std::cout<<"=====================\n";
         while(pHelp != nullptr){
-            std::cout << "Nama Obat : " << pHelp->nextObat << '\n';
-            std::cout << "Harga \t : " << pHelp->harga << '\n';
-            std::cout << "Stok \t : " << pHelp->stok << '\n';
-            pHelp->nextObat;
+            std::cout << "\nNama Obat : " << pHelp->namaObat << '\n';
+            std::cout << "Harga \t  : " << pHelp->harga << '\n';
+            std::cout << "Stok \t  : " << pHelp->stok << '\n';
+            pHelp = pHelp->nextObat;
         }
         std::cout << '\n';
+    }
+}
+
+int hargaObt(obatList& head, std::string namaObt){
+    obatPtr temp = head;
+    int hrg;
+    while(temp != nullptr){
+        
+        if(temp->namaObat == namaObt){
+            hrg = temp->harga;
+        }
+        temp = temp->nextObat;
+    }
+    return hrg;
+}
+
+void Restock(obatList& head, std::string namaObat, int jmlh){
+    obatPtr temp = head;
+    while(temp != nullptr){
+        if(temp->namaObat == namaObat){
+            temp->stok = temp->stok + jmlh;
+        }
+        temp = temp->nextObat;
     }
 }

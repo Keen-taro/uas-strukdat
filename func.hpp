@@ -1,5 +1,20 @@
 #include <iostream>
-#include "struct.hpp"
+
+struct pasien{
+    std::string namaPsn;
+    std::string alamat;
+    std::string namaObt;
+    int jumlahObt;
+    int priority;
+    pasien* nextPsn;
+};
+typedef pasien *pasienPtr;
+
+struct Queue{
+    pasienPtr head;
+    pasienPtr tail;
+};
+Queue Q;
 
 void createQueue(Queue& Q){
     Q.head = nullptr;
@@ -43,13 +58,13 @@ void enQueuePsn(Queue& Q, pasienPtr newPasien){
             newPasien->nextPsn = pHelp;
             Q.head = newPasien;
         }
-        else if(pHelp == Q.tail && newElement->priority > pHelp->priority){
+        else if(pHelp == Q.tail && newPasien->priority > pHelp->priority){
             pHelp->nextPsn = newPasien;
             Q.tail = newPasien;
         }
         else{
             pRev->nextPsn = newPasien;
-            newElement->next = pHelp;
+            newPasien->nextPsn = pHelp;
         }
     }
 }
@@ -74,10 +89,15 @@ void traversalPsn(Queue& Q){
     if(emptyPsn(Q)){
         std::cout<<"Tidak ada antrian pemesanan obat";
     }else{
+        std::cout<<"\n=========================\n";
+        std::cout<<"        Antrian Obat\n";
+        std::cout<<"==========================\n";
         while(pHelp != nullptr){
-            std::cout<<i+1<<". Nama : "<<pHelp->namaPsn<<std::endl;
-            std::cout<<"   Alamat : "<<pHelp->alamat<<std::endl;
-            std::cout<<"   Pesanan : "<<pHelp->namaObt<<" x "<<pHelp->jumlahObt;
+            std::cout<<"\n   Nama    : "<<pHelp->namaPsn<<std::endl;
+            std::cout<<"   Alamat  : "<<pHelp->alamat<<std::endl;
+            std::cout<<"   Pesanan : "<<pHelp->namaObt<<" x "<<pHelp->jumlahObt<<"\n";
+            pHelp = pHelp->nextPsn;
         }
+        
     }
 }
