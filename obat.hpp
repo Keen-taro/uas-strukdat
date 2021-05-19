@@ -95,3 +95,13 @@ void Restock(obatList& head, std::string namaObat, int jmlh){
         temp = temp->nextObat;
     }
 }
+
+void minObat(obatList& head, std::string namaObt, int jmlh){
+    obatPtr temp = head;
+    while(temp != nullptr){
+        if(temp->namaObat == namaObt){
+            temp->stok = temp->stok - jmlh;
+        }
+        temp = temp->nextObat;
+    }
+}

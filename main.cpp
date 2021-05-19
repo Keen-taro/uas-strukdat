@@ -77,7 +77,9 @@ int main(){
                     std::cout<<"======================\n";
                     std::cout<<"Nama Obat   : "<<namaObt<<"\n";
                     std::cout<<"Jumlah      : "<<jmlh<<"\n";
-                    std::cout<<"Harga Total : "<<hargaObt(head, namaObt);
+                    std::cout<<"Harga Total : "<<hargaObt(head, namaObt) * jmlh;
+                    minObat(head, namaObt, jmlh);
+                    traversal(head);
                     break;
                 case 2:
                     traversal(head);
@@ -107,6 +109,7 @@ int main(){
                     std::cout<<"  Jumlah    : "; std::cin>>jmlh;
                     createElemnt(newObat, harga, jmlh, namaObt);
                     insertObat(head, newObat);
+                    traversal(head);
                     break;
 
                 case 2:
@@ -116,6 +119,7 @@ int main(){
                     std::cout<<"  Nama Obat                     : "; std::cin>>namaObt;
                     std::cout<<"  Jumlah yang ingin ditambahkan : "; std::cin>>jmlh;
                     Restock(head, namaObt, jmlh);
+                    traversal(head);
                     break;
                 case 3:
                     traversalPsn(q);
